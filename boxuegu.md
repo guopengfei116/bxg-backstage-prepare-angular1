@@ -41,11 +41,16 @@ var isExist = $.removeCookie('cookieKey');
 var cookieVal = $.cookie('cookieKey', { path: '/' });
 ```
 
-## nprogress
+### nprogress
 > [官方地址](http://ricostacruz.com/nprogress/)
 
-## jquery.form
+### jquery.form
 > [github地址](https://github.com/jquery-form/form)
+
+###### 提交
+
+- ajaxSubmit
+    + 根据form表单的数据发送ajax请求
 ```javascript
 $('form').on('submit', function () {
 	$(this).ajaxSubmit({
@@ -54,20 +59,30 @@ $('form').on('submit', function () {
 		data: {newProperty: '额外添加的属性'},
 		success: function (data) {
 			console.log(data);
+		}
 	});
 	return false;
 });
 ```
 
-## jquery-ajax全局事件
-> 如果使用了jquery的ajax方法发送请求，
-那么jquery就会触发document上的几个jquery事件。
+- ajaxForm
+    + 监听表单submit事件，并阻止默认的提交
+    + 然后根据form表单的数据发送ajax请求
+```javascript
+$(this).ajaxForm({
+	url: '/v6/example',
+	type: 'post',
+	data: {newProperty: '额外添加的属性'},
+	success: function (data) {
+		console.log(data);
+});
+```
 
-### 常用的事件
-> 通常我们会在多个ajax组合成的整体生命周期中的最开始让loading图片展示，
-整体生命周期结束时隐藏loading，那么对应的两个事件就是ajaxStart和ajaxStop。
+### jquery-ajax全局事件
+> 如果使用了jquery的ajax相关方法发送请求，
+那么jquery就会在document触发上触发几个jquery定义的事件。
 
-### jquery中给document定义了几个ajax相关的事件，用户可以用来监听
+##### 事件种类
 
 - ajaxStart
     + 在请求刚刚发送出去时，该事件被触发。
@@ -90,6 +105,12 @@ $('form').on('submit', function () {
 - ajaxComplete
     + 请求完成后触发该事件，不在乎请求是否成功。
     + 如果同时发送多个请求，每一个请求都会触发该事件。
+
+##### 常用事件
+- 我们的页面可能同时发送多个ajax请求，
+- 通常我们会在第一个请求发送后展示一张loading图片，
+- 最后一个请求结束后隐藏loading图片，
+- 那么对应的两个事件就是ajaxStart和ajaxStop。
 
 ## 工作环境与状况了解
 

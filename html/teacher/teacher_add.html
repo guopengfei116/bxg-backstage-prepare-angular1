@@ -26,7 +26,7 @@
                 <li class="active">{{ tc_id? '讲师编辑': '讲师添加' }}</li>
             </ol>
             <div class="teacher-add">
-                <form id="teacher-add-edit-form" action="" class="form-horizontal col-xs-offset-2">
+                <form id="teacher-add-edit-form" action="{{ tc_id? '/v6/teacher/update': '/v6/teacher/add' }}" method="post" class="form-horizontal col-xs-offset-2">
                 	<!-- 如果是讲师编辑，那么在提交表单的时候，需要这个讲师id -->
                     {{ if tc_id }}
                     	<input type="hidden" name="tc_id" value="{{ tc_id }}">
@@ -49,7 +49,7 @@
                     <div class="form-group">
                         <label for="" class="col-xs-3 control-label">入职时间</label>
                         <div class="col-xs-4">
-                            <input name="tc_join_date" value="{{ tc_join_date }}"  type="text" class="form-control input-sm">
+                            <input id="datepicker-join" name="tc_join_date" value="{{ tc_join_date }}"  type="text" class="form-control input-sm">
                         </div>
                     </div>
                     <div class="form-group">

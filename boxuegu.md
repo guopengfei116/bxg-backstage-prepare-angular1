@@ -53,15 +53,15 @@ var cookieVal = $.cookie('cookieKey', { path: '/' });
     + 根据form表单的数据发送ajax请求
 ```javascript
 $('form').on('submit', function () {
-	$(this).ajaxSubmit({
-		url: '/v6/example',
-		type: 'post',
-		data: {newProperty: '额外添加的属性'},
-		success: function (data) {
-			console.log(data);
-		}
-	});
-	return false;
+		$(this).ajaxSubmit({
+			url: '/v6/example',
+			type: 'post',
+			data: {newProperty: '额外添加的属性'},
+			success: function (data) {
+				console.log(data);
+			}
+		});
+		return false;
 });
 ```
 
@@ -70,11 +70,12 @@ $('form').on('submit', function () {
     + 然后根据form表单的数据发送ajax请求
 ```javascript
 $(this).ajaxForm({
-	url: '/v6/example',
-	type: 'post',
-	data: {newProperty: '额外添加的属性'},
-	success: function (data) {
-		console.log(data);
+		url: '/v6/example',
+		type: 'post',
+		data: {newProperty: '额外添加的属性'},
+		success: function (data) {
+			console.log(data);
+		}
 });
 ```
 

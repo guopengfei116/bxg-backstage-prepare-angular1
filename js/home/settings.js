@@ -15,7 +15,6 @@ define(['jquery', 'common', 'header', 'aside', 'nprogress', 'loading', 'template
 		}
 	});
 	
-	
 	// 修改数据
 	function modify() {
 		$('#settings-form').ajaxForm(function(data) {
@@ -24,7 +23,6 @@ define(['jquery', 'common', 'header', 'aside', 'nprogress', 'loading', 'template
 			}
 		});
 	}
-	
 	
 	nprogress.done();
 });

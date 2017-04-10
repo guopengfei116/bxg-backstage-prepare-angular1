@@ -1,4 +1,5 @@
-define(['jquery', 'jqueryCookie', 'nprogress', 'loading'], function($, undefined, nprogress, undefined) {
+define(['jquery', 'jqueryCookie', 'nprogress', 'loading'], 
+	function($, undefined, nprogress, undefined) {
 	
 	// 登陆效验
 	(function() {

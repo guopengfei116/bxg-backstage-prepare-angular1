@@ -1,5 +1,5 @@
-define(['aside', 'header', 'loading', 'nprogress', 'jquery', 'template', 'jqueryForm', 'datepicker', 'datepickerCN'], 
-	function(undefined, undefined, undefined, nprogress, $, template, undefined, undefined, undefined) {
+define(['common', 'aside', 'header', 'loading', 'nprogress', 'jquery', 'template', 'jqueryForm', 'datepicker', 'datepickerCN'], 
+	function(common, undefined, undefined, undefined, nprogress, $, template, undefined, undefined, undefined) {
 	
 	/**
 	 * 我们这里的js，作用与两个页面，一个是讲师添加，一个是讲师编辑。

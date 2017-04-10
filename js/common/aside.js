@@ -76,11 +76,16 @@ define(['jquery', 'jqueryCookie', 'template'], function($, undefined, template) 
 		 * */
 		
 		var pathHref = {
-			'/html/teacher/teacher_add.html': '/html/teacher/teacher_list.html'
+			'/html/teacher/teacher_add.html': '/html/teacher/teacher_list.html',
+			'/html/course/course_add_step1.html': '/html/course/course_add.html',
+			'/html/course/course_add_step2.html': '/html/course/course_add.html',
+			'/html/course/course_add_step3.html': '/html/course/course_add.html',
 		};
 		var pathname = location.pathname;
 		var aHref = pathHref[pathname]? pathHref[pathname]: pathname;
-		$('.navs a').removeClass('active').filter('[href="' + aHref + '"]').addClass('active');
+		$('.navs a').removeClass('active')
+			.filter('[href="' + aHref + '"]').addClass('active')
+			.parentsUntil('.navs').show();
 		
 	})();
 });

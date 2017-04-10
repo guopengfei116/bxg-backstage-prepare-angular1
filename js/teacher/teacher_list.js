@@ -1,4 +1,5 @@
-define(['bootstrap', 'aside', 'header', 'loading', 'nprogress', 'jquery', 'template'], function(undefined, undefined, undefined, undefined, nprogress, $, template) {
+define(['common', 'bootstrap', 'aside', 'header', 'loading', 'nprogress', 'jquery', 'template'], 
+	function(common, undefined, undefined, undefined, undefined, nprogress, $, template) {
 	
 	// 渲染讲师列表
 	(function() {

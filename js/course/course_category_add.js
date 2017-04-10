@@ -1,5 +1,5 @@
 define(['jquery', 'common', 'header', 'aside', 'nprogress', 'loading', 'template', 'jqueryForm'], 
-	function($, common, undefined, undefined, nprogress, loading, template, undefined) {
+	function($, common, undefined, undefined, nprogress, undefined, template, undefined) {
 
 	/**
 	 * 1、通过search区分是添加还是编辑

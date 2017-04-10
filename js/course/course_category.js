@@ -1,5 +1,5 @@
 define(['jquery', 'common', 'header', 'aside', 'nprogress', 'loading', 'template'], 
-	function($, undefined, undefined, undefined, nprogress, loading, template) {
+	function($, common, undefined, undefined, nprogress, undefined, template) {
 	
 	// 课程分类列表渲染
 	$.get('/v6/category', function(data){

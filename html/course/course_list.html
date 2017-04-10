@@ -69,7 +69,7 @@
                 <img src={{ course.cs_cover? course.cs_cover: "/img/course.png" }} alt="">
             </div>
             <div class="info">
-                <a href="javascript:;">{{ course.cs_name }}</a>
+                <a href="/html/course/course_add_step1.html?cs_id={{ course.cs_id }}">{{ course.cs_name }}</a>
                 <ul class="list-unstyled">
                     <li>
                         <span>讲师：{{ course.tc_name }}</span>
@@ -88,6 +88,8 @@
         </div>
         {{ /each }}
     </script>
+    <!-- 页面公共loading -->
+    <?php include($_SERVER['DOCUMENT_ROOT'].'/html/common/loading.html')?>
 	<!-- 页面公共头部 -->
 	<?php include($_SERVER['DOCUMENT_ROOT'].'/html/common/script.html')?>
 </body>

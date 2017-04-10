@@ -1,5 +1,5 @@
 define(['jquery', 'common', 'header', 'aside', 'nprogress', 'loading', 'template', 'jqueryForm', 'datepicker', 'datepickerCN', 'ckeditor', 'jqueryRegion', 'uploadify'], 
-	function($, undefined, undefined, undefined, nprogress, loading, template, undefined, undefined, undefined, ckeditor, undefined, undefined) {
+	function($, common, undefined, undefined, nprogress, undefined, template, undefined, undefined, undefined, ckeditor, undefined, undefined) {
 	
 	// 用来存储将来实例化好的富文本编辑实例。
 	var edit = null;

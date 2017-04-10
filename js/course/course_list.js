@@ -1,5 +1,5 @@
 define(['jquery', 'common', 'header', 'aside', 'nprogress', 'loading', 'template'], 
-	function($, undefined, undefined, undefined, nprogress, loading, template) {
+	function($, common, undefined, undefined, nprogress, undefined, template) {
 	
 	// 定义一个helper函数，这个函数也叫过滤器
 	// 使用helper，必须先传入一个过滤器名词，再传入这个过滤器对应的回调函数

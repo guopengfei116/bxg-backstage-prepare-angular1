@@ -248,6 +248,10 @@ $('input').on('changeDate', function($e){
 - fileObjName
     + 设置提交给后端文件数据对应的key
     + 默认值为'Filedata'
+    
+- formData
+    + 配置除fileObjName，需要额外提交的数据
+    + 值为key、value形式的对象
 
 - fileSizeLimit
     + 限制文件大小
@@ -259,10 +263,42 @@ $('input').on('changeDate', function($e){
 
 - buttonText
     + 设置按钮文本
+    
+- buttonClass
+    + 设置按钮class属性值，用来控制按钮样式
+    
+- auto
+    + 配置选取文件后是否自动上传
 
 - onUploadSuccess
     + 文件上传成功的回调
     + 回调接收的第一个参数为文件对象，第二个参数为请求回来的数据
+    
+##### 方法调用
+
+- upload
+    + 使用脚本的方式随时提交选择的文件
+```javascript
+	$('#uploadify').uploadify('upload');
+```
+
+- disable
+    + 禁用或开启上传功能
+```javascript
+	$('#uploadify').uploadify('disable', true ||false);
+```
+
+- destroy
+    + 卸载插件
+```javascript
+	$('#uploadify').uploadify('destroy');
+```
+
+- settings
+    + 动态修改属性配置
+```javascript
+	$('#uploadify').uploadify('settings', 'buttonText', '按钮');
+```
 
 ### ckeditor
 > [官方地址](ttp://ckeditor.com)
@@ -285,6 +321,96 @@ var edit = CKEDITOR.replace("ckeditor", config);
 
 - 实例.getData
     + 获取内容
+
+### Jcrop
+> [官方地址](http://jcrop.org/)
+
+##### 基本使用
+```html
+<img src="img/cc.png">
+<script>
+	// 成功回调内的this为刚创建的图片裁剪实例对象
+	$('img').Jcrop({
+		aspectRatio: 1,
+		setSelect: [ x,y,w,h ],
+		bgColor: 'red'
+	}, callback);
+</script>
+```
+
+##### 属性配置
+
+- setSelect
+    + 设置默认选区
+    + 值为数组，为选区的x,y坐标与w,h大小
+    + 这个属性值为最终值，所以是实际效果中会按照图片显式大小的比例放大缩小
+
+- aspectRatio
+    + 设置选取图片的宽高比
+    + 默认为0
+
+- bgColor
+    + 设置背景颜色
+    + 默认为黑色
+
+- bgOpacity
+    +　设置透明度
+    + 默认为0.6
+
+- maxSize
+    + 限制裁剪图片的最大宽高
+    + 默认不限制，值为一个数组，存储宽高限制
+
+- minSize
+    + 限制裁剪图片的最小宽高
+    + 默认为[8, 8]
+
+- edge
+    + 设置可选区域的范围
+    + 默认不限制，值为一个对象
+    + 如{n:10,s:20,e:30,w:40}，描述了到上右下左四边距离
+
+- boxWidth
+    + 设置图片裁剪区域的最大宽度
+    +　默认为图片的宽
+
+- boxHeight
+    + 设置图片裁剪区域的最大高度
+    +　默认为图片的高
+
+- setOptions
+    +　动态属性配置
+```javascript
+$('img').setOptions({
+	boxWidth: 300,
+	boxHeight: 300,
+});
+```
+
+##### 实例方法
+
+- getSelection
+    + 获取选取结果
+    + 如果没有选取那么会报错
+```javascript
+var jcrop = $('img').Jcrop('api');
+jcrop.getSelection();
+```
+
+- animateTo
+    + 从当前选区跳到指定选区
+    + 值为一个数组，为选区的x,y坐标与w,h大小
+    + 这个属性值为最终值，所以是实际效果中会按照图片显式大小的比例放大缩小
+```javascript
+var jcrop = $('img').Jcrop('api');
+jcrop.animateTo([30, 30, 100, 100]);
+```
+
+- initComponent
+    + 初始化缩略图组件
+```javascript
+jcrop.initComponent('Thumbnailer', { width: 130, height: 130 })
+```
 
 ## 工作环境与状况了解
 

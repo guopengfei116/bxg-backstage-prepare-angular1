@@ -30,18 +30,18 @@ define(['jquery', 'bootstrap', 'common', 'header', 'aside', 'nprogress', 'loadin
 	function updateStepAside() {
 		$('#course-add-aside a').removeClass('active').last().addClass('active');
 	}
-	
+
 	// 4、委托方式绑定课时添加与编辑按钮的点击事件，点击后填出课时模态框
 	// 5、点击发生后获取数据渲染课时添加模态框页面结构
 	(function lessonAddEdit() {
-		
+
 		// 添加课时，需要额外提交课时所属的课程id
 		$(document).on('click', '#lesson-add', function() {
 			renderModalContent({
 				ct_cs_id: searchObj.cs_id
 			});
 		});
-		
+
 		// 编辑课时，需要额外提交课时的id，以及课时所属的课程id
 		$(document).on('click', '#lesson-edit', function() {
 			$.get('/v6/course/chapter/edit', { 
@@ -51,16 +51,16 @@ define(['jquery', 'bootstrap', 'common', 'header', 'aside', 'nprogress', 'loadin
 				renderModalContent(data.result);
 	        });
 		});
-		
+
 		// 渲染模态框
 		function renderModalContent(data) {
 			$('.modal-content').html(template('modal-content-tpl', data));
 		}
 	})();
-	
+
 	// 6、委托方式给模态框中的提交按钮绑定点击事件，事件发生时ajax方式提交表单
 	(function initLessonAddEditForm() {
-		
+
 		// 表单提交成功后刷新当前页
 		$(document).on('click', '#lesson-add-edit-btn', function() {
 			var ct_is_free =  $('#ct-is-free-input').prop('checked');
@@ -73,8 +73,8 @@ define(['jquery', 'bootstrap', 'common', 'header', 'aside', 'nprogress', 'loadin
 				}
 			});
 		});
-		
+
 	})();
-	
+
 	nprogress.done();
 });

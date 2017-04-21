@@ -7,6 +7,6 @@ angular
         return {
             templateUrl:'/app/directives/style/style.html',
             replace :true,
-            restrict:'E'
+            restrict:'CM'
         }
     })

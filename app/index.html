@@ -6,61 +6,20 @@
     <!-- directive:my-style -->
 </head>
 <body>
-    <!-- 页面公共左侧导航 -->
-    <bxg-aside focus="/"></bxg-aside>
-    <!-- 主体 -->
-    <div class="main">
-        <div class="container-fluid">
-        	<!-- 页面公共头部 -->
-        	<div bxg-header></div>
-            <!-- 个人资料 -->
-            <div class="body teacher-profile">
-                <div class="profile">
-                    <div class="row survey">
-                        <div class="col-xs-3">
-                            <div class="cell money">
-                                <i class="fa fa-money"></i>
-                                <span>我的收入</span>
-                                <h5>￥11.11</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-3">
-                            <div class="cell th">
-                                <i class="fa fa-th"></i>
-                                <span>课程数量</span>
-                                <h5>12</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-3">
-                            <div class="cell user">
-                                <i class="fa fa-user"></i>
-                                <span>用户数量</span>
-                                <h5>236</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-3">
-                            <div class="cell eye">
-                                <i class="fa fa-eye"></i>
-                                <span>浏览量</span>
-                                <h5>22435</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="chart">
-                        <div id="main" style="width: 600px;height:400px;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- 页面公共loading -->
-
-    <!-- 页面公共脚本 -->
+	<article ng-view></article>
+    <!-- 基础框架与库 -->
     <script src="/node_modules/angular/angular.js"></script>
+    <script src="/node_modules/angular-route/angular-route.js"></script>
+    <!-- 自定义指令 -->
     <script src="/app/directives/style/style.js"></script>
     <script src="/app/directives/aside/aside.js"></script>
     <script src="/app/directives/header/header.js"></script>
+    <!-- 公共服务 -->
+    <script src="/app/services/cookie.js"></script>
+    <!-- 页面路由与控制器 -->
+    <script src="/app/pages/home/index/index.js"></script>
+    <script src="/app/pages/home/login/login.js"></script>
+    <!-- 入口文件 -->
     <script src="/app/app.js"></script>
-
 </body>
 </html>

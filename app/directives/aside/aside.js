@@ -1,5 +1,6 @@
-var mod = angular.module('bxg-directive-aside', []);
-mod.directive('bxgAside', [function(){
+angular
+.module('bxg-directive-aside', [])
+.directive('bxgAside', [function(){
 	return {
 		templateUrl: '/app/directives/aside/aside.html',
 		restrict: 'EM',

@@ -5,8 +5,8 @@ angular
 .module('bxg-directive-header',[])
 .directive('bxgHeader', function () {
     return {
-        templateUrl:'/app/directives/style/header.html',
-        replace:true,
-        restrict:'C'
+        templateUrl:'/app/directives/header/header.html',
+        restrict:'AC',
+        replace:true
     }
 });

@@ -10,14 +10,13 @@ angular
 				.when('/', {
 					redirectTo: '/index'
 				})
-				.when('index', {
+				.when('/index', {
 					templateUrl: '/app/pages/home/index/index.html',
 					controller: 'indexController'
 				})
 		}
 	])
 	.controller('indexController', [
-		'', 
 		function() {
 			
 		}

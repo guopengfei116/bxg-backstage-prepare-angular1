@@ -11,13 +11,13 @@
     <div class="navs">
         <ul class="list-unstyled">
             <li>
-                <a href="#" ng-class="{ 'active': focus === '/' }">
+                <a href="#!/index" ng-class="{ 'active': focus === 'index' }">
                     <i class="fa fa-home"></i>
-                    仪表盘
+					仪表盘
                 </a>
             </li>
             <li>
-                <a href="#/teacher/teacher_list.html" ng-class="{ 'active': focus === 'teacherManager' }">
+                <a href="#!/teacher/list" ng-class="{ 'active': focus === 'teacher' }"> 
                     <i class="fa fa-bell"></i>
             		讲师管理
                 </a>
@@ -30,17 +30,17 @@
                 </a>
                 <ul class="list-unstyled" ng-show="isCourseManager">
                     <li>
-                        <a href="#/course/course_add.html" ng-class="{ 'active': focus === 'courseManager' }">
+                        <a href="#!/course/add.html" ng-class="{ 'active': focus === 'courseManager' }">
                             课程添加
                         </a>
                     </li>
                     <li>
-                        <a href="#/course/course_list.html" ng-class="{ 'active': focus === 'courseList' }">
+                        <a href="#!/course/list.html" ng-class="{ 'active': focus === 'courseList' }">
                             课程列表
                         </a>
                     </li>
                     <li>
-                        <a href="#/course/course_category.html" ng-class="{ 'active': focus === 'courseCategory' }">
+                        <a href="#!/course/category.html" ng-class="{ 'active': focus === 'courseCategory' }">
                     		课程分类
                         </a>
                     </li>

@@ -1,5 +1,5 @@
 angular
-	.module('bxg-page-login', ['ngRoute'])
+	.module('bxg-page-login', [])
 	.config([
 		'$routeProvider', 
 		function($routeProvider) {

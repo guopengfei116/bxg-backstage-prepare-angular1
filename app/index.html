@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- bxg为入口模块 -->
 <html ng-app='bxg'>
 <head lang="en">
     <meta charset="UTF-8">
@@ -19,7 +20,18 @@
     <!-- 页面路由与控制器 -->
     <script src="/app/pages/home/index/index.js"></script>
     <script src="/app/pages/home/login/login.js"></script>
-    <!-- 入口文件 -->
+    <script src="/app/pages/home/repass/repass.js"></script>
+    <script src="/app/pages/home/settings/settings.js"></script>
+    <script src="/app/pages/teacher/edit/edit.js"></script>
+    <script src="/app/pages/teacher/list/list.js"></script>
+    <script src="/app/pages/course/add/add.js"></script>
+    <script src="/app/pages/course/list/list.js"></script>
+    <script src="/app/pages/course/edit_step1/edit1.js"></script>
+    <script src="/app/pages/course/edit_step2/edit2.js"></script>
+    <script src="/app/pages/course/edit_step3/edit3.js"></script>
+    <script src="/app/pages/course/category_edit/edit.js"></script>
+    <script src="/app/pages/course/category_list/list.js"></script>
+    <!-- 入口模块，angular中的模块引入顺序可以打乱，因为这些模块在页面load后统一执行的  -->
     <script src="/app/app.js"></script>
 </body>
 </html>

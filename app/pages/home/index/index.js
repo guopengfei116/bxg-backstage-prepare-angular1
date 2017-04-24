@@ -1,5 +1,5 @@
 angular
-	.module('bxg-page-index', ['ngRoute'])
+	.module('bxg-page-index', [])
 	.config([
 		'$routeProvider', 
 		function($routeProvider) {

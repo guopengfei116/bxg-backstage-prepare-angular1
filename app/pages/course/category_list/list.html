@@ -1,0 +1,51 @@
+<article>
+	<!-- 页面公共左侧导航，使用自定义标签方式引入模版 -->
+    <bxg-aside focus="teacher"></bxg-aside>
+    <!-- 主体 -->
+    <div class="main">
+        <div class="container-fluid">
+        	<!-- 页面公共头部，使用自定义属性方式引入模版 -->
+        	<div bxg-header></div>
+            <div class="body course-category">
+                <!-- 面包屑 -->
+                <ol class="breadcrumb">
+                    <li><a href="javascript:;">课程管理</a></li>
+                    <li class="active">课程分类</li>
+                </ol>
+                <div class="page-title">
+                    <a href="./course_category_add.html" class="btn btn-success btn-sm pull-right">添加分类</a>
+                </div>
+                <div class="panel panel-default">
+                    <table id="course-category-table" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th width="18%">分类名称</th>
+                                <th>课程数量</th>
+                                <th>是否显示</th>
+                                <th>排序</th>
+                                <th width="10%">操作</th>
+                            </tr>
+                        </thead>
+                        <!-- 课程分类列表的坑 -->
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 课程分类列表的模版 -->
+    <script id="course-category-tpl" type="text/tpl">
+    	<tbody>
+    		{{ each result as category i }}
+            <tr class={{ category.cg_pid == 0? "active": "" }}>
+                <td class="text-left">{{ category.cg_name }}</td>
+                <td>{{ category.level }}</td>
+                <td>{{ category.cg_is_hide == 0? '是': '否' }}</td>
+                <td>{{ category.cg_order }}</td>
+                <td>
+                    <a href="/html/course/course_category_add.html?cg_id={{ category.cg_id }}" class="btn btn-info btn-xs">编辑</a>
+                </td>
+            </tr>
+            {{ /each }}
+        </tbody>
+    </script>
+</article>

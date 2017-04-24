@@ -1,0 +1,55 @@
+<article>
+	<!-- 页面公共左侧导航，使用自定义标签方式引入模版 -->
+    <bxg-aside focus="teacher"></bxg-aside>
+    <!-- 主体 -->
+    <div class="main">
+        <div class="container-fluid">
+        	<!-- 页面公共头部，使用自定义属性方式引入模版 -->
+        	<div bxg-header></div>
+            <div class="body course-add">
+                <!-- 面包屑 -->
+                <ol class="breadcrumb">
+                    <li><a href="javascript:;">课程管理</a></li>
+                    <li class="active">课程添加</li>
+                </ol>
+                <div class="steps">
+                	<!-- 课程编辑第二步的坑 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 课程编辑第二步的模版 -->
+    <script id="step-tpl" type="text/tpl">
+    	<?php include('../common/course/add_step_head.html') ?>
+		<?php include('../common/course/add_step_aside.html') ?>
+        <!-- 课程图片 -->
+        <div class="content">
+            <!-- 标题 -->
+            <div class="title">
+                <h5>课程图片 <small>COURSE PICTURE</small></h5>
+            </div>
+            <!-- 上传图片 -->
+            <div class="picture col-xs-offset-2">
+                <div class="preview">
+                    <img class='cover-img' src="{{ cs_cover_original? cs_cover_original: '/img/course.png' }}" alt="">
+                </div>
+                <p class="tips">
+                    可上传jpg, gif, png格式文件, 图片建议尺寸大于300x150，文件大小不能超过2M。
+                </p>
+                <div class="col-xs-2">
+                	<input id="uploadify" class="" type="file">
+                </div>
+                <div class="col-xs-2">
+                	<form id="picture-clip-form" action="/v6/course/update/picture" method="post" style="display: none;">
+                		<input type="hidden" name="cs_id" value="{{ cs_id }}" />
+                		<input id="clip-x-input" type="hidden" name="x" />
+                		<input id="clip-y-input" type="hidden" name="y" />
+                		<input id="clip-w-input" type="hidden" name="w" />
+                		<input id="clip-h-input" type="hidden" name="h" />
+                	</form>
+                    <a id="tailor-btn" href="javascript:;" class="btn btn-warning btn-sm">裁切图片</a>
+                </div>
+            </div>
+        </div>
+    </script>
+</article>

@@ -1,9 +1,10 @@
-/**
- * Created by sunShine on 2017/4/22.
- */
+// bxg主模块，通过页面的ng-app调用，辅助模块在这里配置了依赖才会执行
 angular
 	.module('bxg',[
 	
+		// 只要该模块被加载过，那么该模块的服务就可以在其他模块中直接使用，无需配置依赖
+		'ngRoute',
+		
 		// directive-module
 	    "bxg-directive-aside",
 	    "bxg-directive-header",
@@ -14,8 +15,18 @@ angular
 	    
 	    // controller-module
 	    "bxg-page-index",
-	    "bxg-page-login"
-	    
+	    "bxg-page-login",
+	    "bxg-page-repass",
+	    "bxg-page-settings",
+	    "bxg-page-teacher-edit",
+	    "bxg-page-teacher-list",
+	    "bxg-page-course-add",
+	    "bxg-page-course-list",
+	    "bxg-page-course-edit-step1",
+	    "bxg-page-course-edit-step2",
+	    "bxg-page-course-edit-step3",
+	    "bxg-page-course-category-edit",
+	    "bxg-page-course-category-list"
 	])
 	.run([
 		'$rootScope',

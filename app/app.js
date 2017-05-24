@@ -5,15 +5,20 @@ angular
 		// 只要该模块被加载过，那么该模块的服务就可以在其他模块中直接使用，无需配置依赖
 		'ngRoute',
 		
-		// directive-module
+		// 常量配置，constant-module
+		"bxg-constant-interface",
+		
+		// 自定义服务，service-module
+	    "bxg-service-cookie",
+	    "bxg-service-ajax",
+	    "bxg-service-param",
+		
+		// 自定义指令，directive-module
 	    "bxg-directive-aside",
 	    "bxg-directive-header",
 	    "bxg-directive-style",
 	    
-	    // service-module
-	    "bxg-service-cookie",
-	    
-	    // controller-module
+	    // 控制器，controller-module
 	    "bxg-page-index",
 	    "bxg-page-login",
 	    "bxg-page-repass",
@@ -27,6 +32,12 @@ angular
 	    "bxg-page-course-edit-step3",
 	    "bxg-page-course-category-edit",
 	    "bxg-page-course-category-list"
+	])
+	.config([
+		'$httpProvider',
+		function($httpProvider) {
+			$httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded, charset=UTF-8';
+		}
 	])
 	.run([
 		'$rootScope',

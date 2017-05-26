@@ -11,46 +11,46 @@
     <div class="navs">
         <ul class="list-unstyled">
             <li>
-                <a href="#!/index" ng-class="{ 'active': foucs === '/index' }">
+                <a href="#!/index" ng-class="{ 'active': path === '/index' }">
                     <i class="fa fa-home"></i>
 					仪表盘
                 </a>
             </li>
             <li>
-                <a href="#!/teacher/list" ng-class="{ 'active': foucs === '/teacher/list' }"> 
+                <a href="#!/teacher/list" ng-class="{ 'active': path === '/teacher/list' }"> 
                     <i class="fa fa-bell"></i>
             		讲师管理
                 </a>
             </li>
             <li>
-                <a class="nav-slide-toggle" href="javascript:;" ng-click="changeSlideShow('category')">
+                <a class="nav-slide-toggle" href="javascript:;" >
                     <i class="fa fa-cog"></i>
                     <span>分类管理</span>
                     <i class="arrow fa fa-angle-right"></i>
                 </a>
-                <ul class="list-unstyled" ng-show="slideIsShow.category">
+                <ul class="list-unstyled">
                     <li>
-                        <a href="#!/category/add" ng-class="{ 'active': foucs === '/category/add' }">分类添加</a>
+                        <a href="#!/category/add" ng-class="{ 'active': path === '/category/add' }">分类添加</a>
                     </li>
                     <li>
-                        <a href="#!/category/list" ng-class="{ 'active': foucs === '/category/list' }">分类列表</a>
+                        <a href="#!/category/list" ng-class="{ 'active': path === '/category/list' }">分类列表</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a class="nav-slide-toggle" href="javascript:;" ng-click="changeSlideShow('course')">
+                <a class="nav-slide-toggle" href="javascript:;">
                     <i class="fa fa-cog"></i>
                    		 课程管理
                     <i class="arrow fa fa-angle-right"></i>
                 </a>
-                <ul class="list-unstyled" ng-show="slideIsShow.course">
+                <ul class="list-unstyled">
                     <li>
-                        <a href="#!/course/add" ng-class="{ 'active': foucs === '/course/add' }">
+                        <a href="#!/course/add" ng-class="{ 'active': path === '/course/add' }">
                             课程添加
                         </a>
                     </li>
                     <li>
-                        <a href="#!/course/list" ng-class="{ 'active': foucs === '/course/list' }">
+                        <a href="#!/course/list" ng-class="{ 'active': path === '/course/list' }">
                             课程列表
                         </a>
                     </li>

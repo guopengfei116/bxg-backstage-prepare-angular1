@@ -3,7 +3,8 @@ angular
 .service('ajaxService', [
 	'$http',
 	'webInterfaceConstant',
-	function($http, webInterfaceConstant) {
+	'paramService',
+	function($http, webInterfaceConstant, paramService) {
 		var key;
 		var self = this;
 		
@@ -20,9 +21,9 @@ angular
 		    if(type === 'get') {
                 xhrPromise = $http.get(url, {params: data});
             }else if(type === 'post') {
-                xhrPromise = $http.post(url, data);
+                xhrPromise = $http.post(url, paramService.toFormData(data));
             }else if(type === 'jsonp') {
-                xhrPromise = $http.jsonp(url, data);
+                xhrPromise = $http.jsonp(url, paramService.toFormData(data));
             }else if(type === 'message') {
                 console.log('html5的另外一种跨域方式');
             }

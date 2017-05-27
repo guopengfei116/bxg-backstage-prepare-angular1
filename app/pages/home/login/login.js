@@ -14,16 +14,15 @@ angular
 		'$scope',
 		'$location',
 		'ajaxService',
-		'paramService',
 		'cookieService',
-		function($scope, $location, ajaxService, paramService, cookieService) {
+		function($scope, $location, ajaxService, cookieService) {
 			
 			// 表单数据
 			$scope.formData = {};
 			
 			// 登陆
 			$scope.login = function() {
-				ajaxService.login(paramService.toFormData($scope.form), function(result) {
+				ajaxService.login($scope.form, function(result) {
 					// 登陆成功后保存用户信息7天
 					cookieService.set('userInfo', JSON.stringify(result), { 
 						'path': '/',

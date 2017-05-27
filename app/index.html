@@ -9,6 +9,8 @@
 <body>
 	<article ng-view></article>
     <!-- 基础框架与库 -->
+    <!--angular中的选择器不支持字符串，需要引入jQuery增强或者调用原生API-->
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
     <script src="/node_modules/angular/angular.js"></script>
     <script src="/node_modules/angular-route/angular-route.js"></script>
     <!-- 常量配置 -->
@@ -26,6 +28,7 @@
     <script src="/app/pages/home/login/login.js"></script>
     <script src="/app/pages/home/repass/repass.js"></script>
     <script src="/app/pages/home/profile/profile.js"></script>
+    <script src="/app/pages/teacher/add/add.js"></script>
     <script src="/app/pages/teacher/edit/edit.js"></script>
     <script src="/app/pages/teacher/list/list.js"></script>
     <script src="/app/pages/course/add/add.js"></script>
@@ -33,8 +36,9 @@
     <script src="/app/pages/course/edit_step1/edit1.js"></script>
     <script src="/app/pages/course/edit_step2/edit2.js"></script>
     <script src="/app/pages/course/edit_step3/edit3.js"></script>
-    <script src="/app/pages/course/category_edit/edit.js"></script>
-    <script src="/app/pages/course/category_list/list.js"></script>
+    <script src="/app/pages/category/add/add.js"></script>
+    <script src="/app/pages/category/edit/edit.js"></script>
+    <script src="/app/pages/category/list/list.js"></script>
     <!-- 入口模块，angular中的模块引入顺序可以打乱，因为这些模块在页面load后统一执行的  -->
     <script src="/app/app.js"></script>
 </body>

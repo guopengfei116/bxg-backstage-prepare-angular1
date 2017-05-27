@@ -1,11 +1,11 @@
 angular
-	.module('bxg-page-course-category-list', [])
+	.module('bxg-page-category-list', [])
 	.config([
 		'$routeProvider', 
 		function($routeProvider) {
 			$routeProvider
-				.when('/course/category/list', {
-					templateUrl: '/app/pages/course/category_list/list.html',
+				.when('/category/list', {
+					templateUrl: '/app/pages/category/list/list.html',
 					controller: 'categoryListController'
 				});
 		}

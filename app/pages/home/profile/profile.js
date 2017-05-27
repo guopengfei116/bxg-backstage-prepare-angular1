@@ -1,16 +1,16 @@
 angular
-	.module('bxg-page-settings', [])
+	.module('bxg-page-profile', [])
 	.config([
 		'$routeProvider',
 		function($routeProvider) {
 			$routeProvider
-				.when('/settings', {
-					templateUrl: '/app/pages/home/settings/settings.html',
-					controller: 'settingsController'
+				.when('/profile', {
+					templateUrl: '/app/pages/home/profile/profile.html',
+					controller: 'profileController'
 				});
 		}
 	])
-	.controller('settingsController', [
+	.controller('profileController', [
 		'$scope',
 		function($scope) {
 			

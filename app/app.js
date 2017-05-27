@@ -22,7 +22,8 @@ angular
 	    "bxg-page-index",
 	    "bxg-page-login",
 	    "bxg-page-repass",
-	    "bxg-page-settings",
+	    "bxg-page-profile",
+	    "bxg-page-teacher-add",
 	    "bxg-page-teacher-edit",
 	    "bxg-page-teacher-list",
 	    "bxg-page-course-add",
@@ -30,8 +31,9 @@ angular
 	    "bxg-page-course-edit-step1",
 	    "bxg-page-course-edit-step2",
 	    "bxg-page-course-edit-step3",
-	    "bxg-page-course-category-edit",
-	    "bxg-page-course-category-list"
+	    "bxg-page-category-add",
+	    "bxg-page-category-edit",
+	    "bxg-page-category-list"
 	])
 	.config([
 		'$httpProvider',

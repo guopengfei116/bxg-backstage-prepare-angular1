@@ -1,11 +1,11 @@
 angular
-	.module('bxg-page-course-category-edit', [])
+	.module('bxg-page-category-edit', [])
 	.config([
 		'$routeProvider', 
 		function($routeProvider) {
 			$routeProvider
-				.when('/course/category/edit', {
-					templateUrl: '/app/pages/course/category_edit/edit.html',
+				.when('/category/edit', {
+					templateUrl: '/app/pages/category/edit/edit.html',
 					controller: 'categoryEditController'
 				});
 		}

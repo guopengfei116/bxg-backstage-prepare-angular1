@@ -6,6 +6,8 @@ angular
 		restrict: 'EM',
 		replace: true,
 		scope: {
+			// 通过自定义标签的属性设置导航默认的焦点，
+			// 不过现在改变了做法，通过js规则来做。
 			focus: '@'
 		},
 		link: function(scope, ele, attr) {

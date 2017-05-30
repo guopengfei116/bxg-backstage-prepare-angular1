@@ -12,7 +12,15 @@ angular
 	])
 	.controller('teacherAddController', [
 		'$scope',
-		function() {
+		'$location',
+		'ajaxService',
+		function($scope, $location, ajaxService) {
 			
+			// 添加讲师
+			$scope.teacherAdd = function() {
+				ajaxService.teacherAdd($('form').get(0), function() {
+					$location.path('/teacher/list');
+				});
+			}
 		}
 	]);

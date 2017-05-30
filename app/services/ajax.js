@@ -16,14 +16,14 @@ angular
 			var interfaceInfo = webInterfaceConstant[name],
 				  url = interfaceInfo.url,
 				  type = interfaceInfo.type;
-				
+			
 			// 发送请求
 		    if(type === 'get') {
                 xhrPromise = $http.get(url, {params: data});
             }else if(type === 'post') {
-                xhrPromise = $http.post(url, paramService.toFormData(data));
+                xhrPromise = $http.post(url, data);
             }else if(type === 'jsonp') {
-                xhrPromise = $http.jsonp(url, paramService.toFormData(data));
+                xhrPromise = $http.jsonp(url, data);
             }else if(type === 'message') {
                 console.log('html5的另外一种跨域方式');
             }
@@ -43,9 +43,21 @@ angular
 		for(key in webInterfaceConstant) {
 			(function(key) {
 				self[key] = function(data, fn) {
-					// data非函数类型，1个参数为回调
-					data = typeof data === 'function'? 
-						(fn = fn || data, null): data;
+					
+					// 1个函数类型参数为回调
+					if(typeof data === 'function') {
+						fn = data;
+						data = null;
+					}
+					// 表单元素类型数据转换
+					else if(({}).toString.call(data).slice(8, -1) === 'HTMLFormElement') {
+						data =paramService.getFormData(data);
+					}
+					// 对象类型数据转换
+					else if(typeof data === 'object' && data != null){
+						data = paramService.toFormData(data);
+					}
+
 					self.send(key, data, fn);
 				};
 			})(key);

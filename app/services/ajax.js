@@ -21,9 +21,9 @@ angular
 		    if(type === 'get') {
                 xhrPromise = $http.get(url, {params: data});
             }else if(type === 'post') {
-                xhrPromise = $http.post(url, data);
+                xhrPromise = $http.post(url, paramService.toFormData(data));
             }else if(type === 'jsonp') {
-                xhrPromise = $http.jsonp(url, data);
+                xhrPromise = $http.jsonp(url, paramService.toFormData(data));
             }else if(type === 'message') {
                 console.log('html5的另外一种跨域方式');
             }
@@ -53,9 +53,10 @@ angular
 					else if(({}).toString.call(data).slice(8, -1) === 'HTMLFormElement') {
 						data =paramService.getFormData(data);
 					}
-					// 对象类型数据转换
+					// 对象类型数据暂不转换，因为get请求必须是对象
 					else if(typeof data === 'object' && data != null){
-						data = paramService.toFormData(data);
+						//data = paramService.toFormData(data);
+						data = data;
 					}
 
 					self.send(key, data, fn);

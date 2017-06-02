@@ -13,9 +13,9 @@ angular
 			return formData.slice(0, -1);
 		};
 		
-		// 通过表单获取formData
+		// 通过表单获取数据
 		this.getFormData = function(form) {
-			var formData = '';
+			var data = {};
 			
 			var i = 0, len, 
 				  arr = [];
@@ -34,10 +34,10 @@ angular
 			
 			// 文本类表单数据处理
 			for(len = arr.length; i < len; i++) {
-				formData += arr[i].name + '=' + encodeURIComponent(arr[i].value) + '&';
+				data[arr[i].name] = encodeURIComponent(arr[i].value);
 			}
 			
-			return formData.slice(0, -1);
+			return data;
 		}
 	}
 ]);

@@ -51,7 +51,7 @@
 					            <td>{{ teacher.tc_join_date }}</td>
 					            <td>
 					                <a ng-click="getTeacherInfo(teacher.tc_id)" data-toggle="modal" class="btn btn-info btn-xs teacher-view">查 看</a>
-					                <a href="/#!/teacher_add?tc_id={{ teacher.tc_id }}" class="btn btn-info btn-xs">编 辑</a>
+					                <a href="#!/teacher/edit?tc_id={{ teacher.tc_id }}" class="btn btn-info btn-xs">编 辑</a>
 					                <a ng-click="changeTeacherStatus(teacher, teacher.tc_id, teacher.tc_status)" class="btn btn-warning btn-xs teacher-handle">{{ teacher.tc_status == 0? '注销': '启用'  }}</a>
 					            </td>
 					        </tr>

@@ -31,17 +31,17 @@
                         <thead>
                             <tr>
                                 <th>编号</th>
-                                <th>姓名</th>
-                                <th>昵称</th>
-                                <th>年龄出生日期</th>
-                                <th>性别</th>
-                                <th>手机号码</th>
-                                <th>入职日期</th>
+                                <th ng-click="orderChange('tc_name')">姓名</th>
+                                <th ng-click="orderChange('tc_roster')">昵称</th>
+                                <th ng-click="orderChange('tc_birthday')">年龄出生日期</th>
+                                <th ng-click="orderChange('tc_gender')">性别</th>
+                                <th ng-click="orderChange('tc_cellphone')">手机号码</th>
+                                <th ng-click="orderChange('tc_join_date')">入职日期</th>
                                 <th>操作</th>
                             </tr>
                         </thead>
                        	<tbody>
-					        <tr ng-repeat="teacher in teacherList">
+					        <tr ng-repeat="teacher in teacherList | orderBy: order.title: order.positive">
 					            <td>{{ $index + 1 }}</td>
 					            <td>{{ teacher.tc_name }}</td>
 					            <td>{{ teacher.tc_roster }}</td>

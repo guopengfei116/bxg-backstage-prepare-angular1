@@ -74,5 +74,21 @@ angular
 					return true;
 				}
 			}
+			
+			// 表头排序，默认按钮名称从小到大排序
+			$scope.order = {
+				title: 'tc_name',
+				positive: false
+			};
+
+			// 点击表头修改排序规则，重复点击同一个表头正反切换
+			$scope.orderChange = function(title) {
+				if($scope.order.title === title) {
+					$scope.order.positive = !$scope.order.positive;
+				}else {
+					$scope.order.title = title;
+					$scope.order.positive = true;
+				}
+			};
 		}
 	]);

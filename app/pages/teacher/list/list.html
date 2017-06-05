@@ -18,9 +18,9 @@
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <form action="" class="form-inline">
+                        <form ng-submit="search()" class="form-inline">
                             <div class="input-group">
-                                <input type="text" class="form-control input-sm">
+                                <input ng-model="searchVal" type="text" class="form-control input-sm" placeholder="姓名、昵称、入职日期">
                                 <span class="input-group-btn">
                                     <button class="btn btn-success btn-sm">搜索</button>
                                 </span>

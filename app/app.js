@@ -12,6 +12,9 @@ angular
 	    "bxg-service-cookie",
 	    "bxg-service-ajax",
 	    "bxg-service-param",
+	    
+	    // 自定义过滤器，filter-module
+	    "bxg-filter-list",
 		
 		// 自定义指令，directive-module
 	    "bxg-directive-aside",

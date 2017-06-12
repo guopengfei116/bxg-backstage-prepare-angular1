@@ -16,6 +16,8 @@ angular
 		'ajaxService',
 		function($scope, $location, ajaxService) {
 			
+			$scope.teacher = {};
+			
 			// 添加讲师
 			$scope.teacherAdd = function() {
 				

@@ -13,25 +13,29 @@
 	                <li class="active">{{ tc_id? '讲师编辑': '讲师添加' }}</li>
 	            </ol>
 	            <div class="teacher-add">
-	                <form ng-submit="modify()" id="teacher-add-edit-form"  method="post" class="form-horizontal col-xs-offset-2">
+	                <form name="teacherEditForm" ng-submit="modify()" 
+	                	id="teacher-add-edit-form"  method="post" class="form-horizontal col-xs-offset-2">
 	                	<!-- 如果是讲师编辑，那么在提交表单的时候，需要这个讲师id -->
 	                	<input ng-model="teacher.tc_id" type="hidden" name="tc_id">
 	                    <div class="form-group">
 	                        <label for="" class="col-xs-3 control-label">姓名</label>
 	                        <div class="col-xs-4">
-	                            <input ng-model="teacher.tc_name"  type="text" name="tc_name" class="form-control input-sm" placeholder="讲师名称">
+	                            <input ng-model="teacher.tc_name" ng-required="true" ng-minlength="1" ng-maxlength="8"  
+	                            	type="text" name="tc_name" class="form-control input-sm" placeholder="讲师名称">
 	                        </div>
 	                    </div>
 	                    <div class="form-group">
 	                        <label for="" class="col-xs-3 control-label">入职时间</label>
 	                        <div class="col-xs-4">
-	                            <input ng-model="teacher.tc_join_date" id="datepicker-join" name="tc_join_date" type="text" class="form-control input-sm">
+	                            <input ng-model="teacher.tc_join_date" ng-required="true" ng-pattern="/^\d{4}-[0,1]\d-[0,1,2,3]\d$/" 
+	                            	id="datepicker-join" name="tc_join_date" type="text" class="form-control input-sm">
 	                        </div>
 	                    </div>
 	                    <div class="form-group">
 	                        <label for="" class="col-xs-3 control-label">类型</label>
 	                        <div class="col-xs-2">
-	                            <select ng-model="teacher.tc_type" name="tc_type" class="form-control input-sm">
+	                            <select ng-model="teacher.tc_type" ng-required="true" 
+	                            	 name="tc_type" class="form-control input-sm">
 	                                <option value="1" {{ teacher.tc_type == 1? 'selected': '' }}>讲师</option>
 	                                <option value="0" {{ teacher.tc_type == 1? '': 'selected' }}>管理员</option>
 	                            </select>
@@ -41,16 +45,19 @@
 	                        <label for="" class="col-xs-3 control-label">性别</label>
 	                        <div class="col-xs-4">
 	                            <label class="radio-inline">
-	                                <input ng-model="teacher.tc_gender" name="tc_gender" value="0" {{ teacher.tc_gender == 0? 'checked': '' }} type="radio"> 男
+	                                <input ng-model="teacher.tc_gender" ng-required="true" 
+	                                	 name="tc_gender" value="0" {{ teacher.tc_gender == 0? 'checked': '' }} type="radio"> 男
 	                            </label>
 	                            <label class="radio-inline">
-	                                <input ng-model="teacher.tc_gender" name="tc_gender" value="1" {{ teacher.tc_gender == 1? 'checked': '' }} type="radio"> 女
+	                                <input ng-model="teacher.tc_gender" ng-required="true" 
+	                                	 name="tc_gender" value="1" {{ teacher.tc_gender == 1? 'checked': '' }} type="radio"> 女
 	                            </label>
 	                        </div>
 	                    </div>
 	                    <div class="form-group">
 	                        <div class="col-xs-7">
-	                            <button type="submit" class="btn btn-success btn-sm pull-right"> 添 加 </button>
+	                            <button ng-disabled="teacherEditForm.$invalid" 
+	                            	type="submit" class="btn btn-success btn-sm pull-right"> 添 加 </button>
 	                        </div>
 	                    </div>
 	                </form>
